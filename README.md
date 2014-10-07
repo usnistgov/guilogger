@@ -63,6 +63,6 @@ For each case the namming standard will be [toolkit-name]logger. As you see '*gt
 
 References
 ==========
-[Gtklogger NIST internal publication paper as a model](gui_testing.pdf)
+[Gtklogger NIST internal publication paper as a model](../guilogger/mastergui_testing.pdf)
 
 [OOF website](http://www.ctcms.nist.gov/oof/)
