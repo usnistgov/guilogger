@@ -31,34 +31,34 @@ atic ways of testing of a graphical user interface. In this article, we take a s
 direction, describing the construction of a testing kit, that allows a user session with a GUI
 to be recorded and played back, and that allows the state of the GUI widgets to be queried
 at repeatable locations within the session, ensuring both correctness and consistency of the
-*GUI* state.
+__GUI__ state.
 
-For our example, we use the *GIMP Tool Kit* (*GTK*) widget set1, specifically *gtk+*, version
-2.6 or later, and its Python wrappers, *PyGTK2* . We have created a Python module, called
-gtklogger, which can be used to record, replay, and test a program with a *PyGTK* user
-interface. gtklogger was developed specifically to test the OOF3 project at *NIST*, but can
-easily be applied to other *PyGTK* programs. This paper includes instructions for extending
-*gtklogger* to handle *PyGTK* objects that were not used in *OOF*.
+For our example, we use the __GIMP Tool Kit__ (__GTK__) widget set1, specifically __gtk+__, version
+2.6 or later, and its Python wrappers, __PyGTK2__ . We have created a Python module, called
+gtklogger, which can be used to record, replay, and test a program with a __PyGTK__ user
+interface. gtklogger was developed specifically to test the OOF3 project at __NIST__, but can
+easily be applied to other __PyGTK__ programs. This paper includes instructions for extending
+__gtklogger__ to handle __PyGTK__ objects that were not used in __OOF__.
 
-*NOTE*: The full technical report can be found in the references.
+__NOTE__: The full technical report can be found in the references.
 
 Contributors
 ============
-This project is meant to share the concept developed by the *OOF team* at the __National Institute
-of Standards and technology__ (*NIST*). The *OOF GUI* benefited a lot from the first implementation
-of that concept for *GTK*.
+This project is meant to share the concept developed by the __OOF team__ at the __National Institute
+of Standards and technology__ (__NIST__). The __OOF GUI__ benefited a lot from the first implementation
+of that concept for __GTK__.
 
 We encourage you to contribute to that project, since it is providing a different way of designing 
-your *GUI* tests suite as you have glenced from the description and probably understood from the 
+your __GUI__ tests suite as you have glenced from the description and probably understood from the 
 technical report if you have got to read it.
 
-The *gtklogger* is there for anybody coding a *GUI* based *GTK* app. So use it and let us know what you
+The __gtklogger__ is there for anybody coding a __GUI__ based __GTK__ app. So use it and let us know what you
 think about it. If you want to add some features or fix some issues that you encountered, please
 feel free to contact us.
 
 We also motivate the implementation of this concept for other GUI toolkits. We are thinking of:
-*Qt*, *Glui*, *Juce*, *gladexml*, *jqueryUI*, *capuccino*, etc...
-For each case the namming standard will be [toolkit-name]logger as you see '*gtklogger*'.
+__Qt__, __Glui__, __Juce__, __gladexml__, __jqueryUI__, __capuccino__, etc...
+For each case the namming standard will be [toolkit-name]logger as you see '__gtklogger__'.
 
 
 References
