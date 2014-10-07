@@ -44,13 +44,13 @@ easily be applied to other *PyGTK* programs. This paper includes instructions fo
 
 Contributors
 ============
-This project is meant to share the concept developed by the *OOF team* at the National Institute
-of Standards and technology. The OOF GUI benefited a lot from the first implementation of that concept
-for *GTK*.
+This project is meant to share the concept developed by the *OOF team* at the __National Institute
+of Standards and technology__ (*NIST*). The *OOF GUI* benefited a lot from the first implementation
+of that concept for *GTK*.
 
-We encourage you to contribute to that project, since it is providing a different of designing a *GUI*
-testing toolkit as you have glenced from the description and probably understood from the technical
-report.
+We encourage you to contribute to that project, since it is providing a different way of designing 
+your *GUI* tests suite as you have glenced from the description and probably understood from the 
+technical report if you have got to read it.
 
 The *gtklogger* is there for anybody coding a *GUI* based *GTK* app. So use it and let us know what you
 think about it. If you want to add some features or fix some issues that you encountered, please
@@ -58,7 +58,7 @@ feel free to contact us.
 
 We also motivate the implementation of this concept for other GUI toolkits. We are thinking of:
 *Qt*, *Glui*, *Juce*, *gladexml*, *jqueryUI*, *capuccino*, etc...
-For each case the namming standard will be [toolkit-name]logger. As you see '*gtklogger*'.
+For each case the namming standard will be [toolkit-name]logger as you see '*gtklogger*'.
 
 
 References
