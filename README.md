@@ -59,13 +59,14 @@ integrates __gtklogger__ to be able to enable the recording /replaying.
 
 To simply run the app type: *python gtkloggerdemo.py*.
 
-To record a session in a 'log.py' file do: *python gtkloggerdemo.py --record=log.py*.
-From here you can instrument the log file with some tests.
+To record a session in 'log.py', do: *python gtkloggerdemo.py --record=log.py*.
+From there you can instrument the log file with some tests.
 
-To replay the log file (instrumented or not) type: *python gtkloggerdemo --replay=log.py*.
+To replay the log file (instrumented or not) type: *python gtkloggerdemo.py --replay=log.py*.
 
-__NOTE__: When you start a recording, there is another GUI that appears. It is the guilogger UI for GTK. It
-allows you to view the events recoded in the log file and also be able to add some comments as the recording goes.
+__NOTE__: When you start a recording, there is another GUI that appears alon with your app. It is the 
+guilogger UI for GTK. It allows you to view the events recoded in the log file and also be able to add
+ some comments as the recording goes.
 
 
 References
