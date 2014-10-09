@@ -2,11 +2,11 @@ Guilogger
 =========
 Guilogger started from __gtklogger__, which is a Python module for recording (capturing) and
 replaying a session of a program with a __GUI__ written with __PyGTK__. It can be used with any
-__PyGTK__ similarily in spirit to __PyUseCase__, but aiming GUI tests suite desgin. After testing
+__PyGTK__ similarily in spirit to __PyUseCase__, but aiming GUI tests suite design. After testing
 __gtklogger__ on __OOF2__ and the newly released __OOF3D__ it became obvious to us that the
-concept of __recording__ and __replaying__ for __GUI__ is very conveniant. That is why we decided 
-to create this __guilogger__ to introduce the idea being in play but also collaborate with
-contributors to spread it to more GUI toolkits.
+concept of __recording__ plus __instrumenting__ and __replaying__ for __GUI__ is very conveniant. 
+That is why we decided  to create this __guilogger__ to introduce the idea being in play but also
+ collaborate with contributors to spread it to more GUI toolkits.
 
 
 Description
@@ -45,20 +45,24 @@ __Qt__, __Glui__, __Juce__, __gladexml__, __jqueryUI__, __capuccino__, etc...
 For each case the namming standard will be [toolkit-name]logger as you see '__gtklogger__'.
 
 
-Installtion & Test
+Install & Test
 ==================
 
 Gtklogger
 ---------
-To install __gtklogger__, go inside the folder and type: python setup.py install. Yet if you do not have root
-privileges you add '--user' as the following: python setup.py install --user.
-To test the __gtklogger__, please take a look at the examples folder there is a __gtkloggerdemo__ project in it.
+To install __gtklogger__, go inside the folder and type: *python setup.py install*. Yet if you do not have root
+privileges you add '--user' as the following: *python setup.py install --user* to install it locally.
+
+To test the __gtklogger__, please take a look at the examples folder. There is a __gtkloggerdemo__ project in it.
 It is a simple GTK UI app to manage the creation of some geometric shapes. Please look carefully how it
 integrates __gtklogger__ to be able to enable the recording /replaying.
-To simply run the app type: python gtkloggerdemo.py.
-To record a session in a 'log.py' file do: python gtkloggerdemo.py --record=log.py
+
+To simply run the app type: *python gtkloggerdemo.py*.
+
+To record a session in a 'log.py' file do: *python gtkloggerdemo.py --record=log.py*.
 From here you can instrument the log file with some tests.
-To replay the log file (instrumented or not) type: python gtkloggerdemo --replay=log.py
+
+To replay the log file (instrumented or not) type: *python gtkloggerdemo --replay=log.py*.
 
 __NOTE__: When you start a recording, there is another GUI that appears. It is the guilogger UI for GTK. It
 allows you to view the events recoded in the log file and also be able to add some comments as the recording goes.
