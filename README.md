@@ -1,46 +1,31 @@
 Guilogger
 =========
-We describe a scheme for systematically testing the operation of a graphical user interface. The
-scheme provides a capability for generating event logs, which are recordings of a user session with
-the interface. These logs can be annotated with assertion statements, comparing reference test
-data with data retrieved by introspection on the GUI elements. Such an annotated log forms a
-test case, suitable for incorporation into a regression test suite.
+Guilogger started from __gtklogger__, which is a Python module for recording (capturing) and
+replaying a session of a program with a __GUI__ written with __PyGTK__. It can be used with any
+__PyGTK__ similarily in spirit to __PyUseCase__, but aiming GUI tests suite desgin. After testing
+__gtklogger__ on __OOF2__ and the newly released __OOF3D__ it became obvious to us that the
+concept of __recording__ and __replaying__ for __GUI__ is very conveniant. That is why we decided 
+to create this __guilogger__ to introduce the idea being in play but also collaborate with
+contributors to spread it to more GUI toolkits.
+
 
 Description
 ===========
-It is well established among software developers that systematic testing of software,
-whether against a formal design specification or against a less formal case-by-case asses-
-ment of correct functionality, is a critical part of the software development cycle, and crucial
-to the production of high-quality software.
+A __guilogger__ is a module that suites your __GUI__ __toolkit__ and that you import in your project.
+It will then enable a test suite to be written for the __UI__ of your __GUI__ __toolkit__ based program.
+The progam that imports a guilogger should probably be adapted (replacing some widgets and calls)
+to be able to record a user session (interactions with the __Graphical__ __Interface__) in a __log__ file.
+Some tests (__asserts__, ...) can then be added to the __log__ file and replayed by the program. If the 
+program successfully play the __log__ file, it has then passed the __GUI__ __Test__ __Case__. This is in
+principle how the __guilogger__ works.
 
-Much formal testing methodology revolves around viewing software products as essen-
-tially functions, in the mathematical sense, abstractly taking a single input from some large
-domain, performing a computation, and producing a single output. Increases in both the
-raw power of computers and in the power and scope of software development tools have lead
-to increasing complexity in software. Presenting this complexity to the user in a compre-
-hensible way demands a graphical user interface, which has its own complexity, and makes
-the software a stateful, interactive machine. While it is still true that the software can
-be thought of as a function, now the inputs and outputs have to be considered to be the
-full state of the program and its GUI. This complicates the application of traditional test-
-ing methods. At the same time, the GUI raises the bar for the expected reliability — it
-allows users more rapid access to potentially-overlooked corner cases, and encourages the
-expectation that all aspects of the program will “just work”.
+For the specific case of __gtklogger__, you can find in this repository the module to import and inside
+the folder examples you will find the project __gtkloggerdemo__ as an application of what has been presented
+here for __gtklogger__.
 
-Contact with formal testing methodology can be restored by the introduction of system-
-atic ways of testing of a graphical user interface. In this article, we take a step in that
-direction, describing the construction of a testing kit, that allows a user session with a GUI
-to be recorded and played back, and that allows the state of the GUI widgets to be queried
-at repeatable locations within the session, ensuring both correctness and consistency of the
-__GUI__ state.
+For more informations about the work that has already been done with __gtklogger__, please follow the 
+references.
 
-For our example, we use the __GIMP Tool Kit__ (__GTK__) widget set1, specifically __gtk+__, version
-2.6 or later, and its Python wrappers, __PyGTK2__ . We have created a Python module, called
-gtklogger, which can be used to record, replay, and test a program with a __PyGTK__ user
-interface. gtklogger was developed specifically to test the OOF3 project at __NIST__, but can
-easily be applied to other __PyGTK__ programs. This paper includes instructions for extending
-__gtklogger__ to handle __PyGTK__ objects that were not used in __OOF__.
-
-__NOTE__: The full technical report can be found in the references.
 
 Contributors
 ============
@@ -49,8 +34,7 @@ of Standards and technology__ (__NIST__). The __OOF GUI__ benefited a lot from t
 of that concept for __GTK__.
 
 We encourage you to contribute to that project, since it is providing a different way of designing 
-your __GUI__ tests suite as you have glenced from the description and probably understood from the 
-technical report if you have got to read it.
+your __GUI__ tests suite.
 
 The __gtklogger__ is there for anybody coding a __GUI__ based __GTK__ app. So use it and let us know what you
 think about it. If you want to add some features or fix some issues that you encountered, please
@@ -61,8 +45,30 @@ __Qt__, __Glui__, __Juce__, __gladexml__, __jqueryUI__, __capuccino__, etc...
 For each case the namming standard will be [toolkit-name]logger as you see '__gtklogger__'.
 
 
+Installtion & Test
+==================
+
+Gtklogger
+---------
+To install __gtklogger__, go inside the folder and type: python setup.py install. Yet if you do not have root
+privileges you add '--user' as the following: python setup.py install --user.
+To test the __gtklogger__, please take a look at the examples folder there is a __gtkloggerdemo__ project in it.
+It is a simple GTK UI app to manage the creation of some geometric shapes. Please look carefully how it
+integrates __gtklogger__ to be able to enable the recording /replaying.
+To simply run the app type: python gtkloggerdemo.py.
+To record a session in a 'log.py' file do: python gtkloggerdemo.py --record=log.py
+From here you can instrument the log file with some tests.
+To replay the log file (instrumented or not) type: python gtkloggerdemo --replay=log.py
+
+__NOTE__: When you start a recording, there is another GUI that appears. It is the guilogger UI for GTK. It
+allows you to view the events recoded in the log file and also be able to add some comments as the recording goes.
+
+
 References
 ==========
+
+[Gtklogger Web docs](http://www.ctcms.nist.gov/oof/gtklogger/#docs)
+
 [Gtklogger NIST internal publication paper as a model](gui_testing.pdf)
 
 [OOF website](http://www.ctcms.nist.gov/oof/)
