@@ -92,7 +92,7 @@ Install & Test
 
 Gtklogger
 ---------
-Check if you have a version of pygtk make sure it is a 2.x where is should be greater or equal to 6.
+Check if you have a version of pygtk and make sure it is a 2.x, where x should be greater or equal to 6.
 To install __gtklogger__, go inside the folder and type: *python setup.py install*. Yet if you do not have root
 privileges you add '--user' as the following: *python setup.py install --user* to install it locally.
 
